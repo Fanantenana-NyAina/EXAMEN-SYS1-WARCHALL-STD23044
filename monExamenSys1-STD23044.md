@@ -67,18 +67,17 @@
         
 ## Warchall : Live LFI & RFI [level 14 & 15]
   **I-Demarche :**
-  - (1) Ouvrir le lien de la page du challenge en appuiant sur ` Live LFI ` mentionner dans l'énonncer [URL:`https://lfi.warchall.net/`]
-  - (2) Une fois sur la page `cliquer` sur le drapeau `Anglais(UK)`
+  - (1) Ouvrir le lien de la page du challenge en appuiant sur ` Live LFI `(pour level14)/`Live RFI`(pour level15) mentionner dans l'énonncer [URL:`https://lfi.warchall.net/`]
+  - (2) Une fois sur la page `cliquer` sur le drapeau `Anglais(UK)`(pour LFI) / la langue `en` en haut - à droite (pour RFI) 
   - (3) L'URL de la page a changé en : `https://lfi.warchall.net/index.php?lang=en`
 
-  - (4) avec une tentative d'injerctions de fichier locaux(LFI), et des notions de php filter, en s'y est pris directement comme suite pour : (modifiant l'URL)
+  - (4) avec une tentative d'injerctions de fichier locaux, et des notions de php filter, en s'y est pris directement comme suite : (modifiant l'URL)
       - `URL : https://lfi.warchall.net/index.php?lang=php://filter/convert.base64-encode/resource=solution.php`
-      **details :**
-      - `https://lfi.warchall.net/index.php?lang=` : C'est la base de l'URL.
-      - `php://filter/convert.base64-encode/resource=` : C'est la partie vulnérable de l'URL. Tentative d'exploitation d'une LFI en utilisant le protocole `php://filter`
-        pour appliquer une "conversion Base64" à la ressource spécifiée. 
-      - `filter/convert.base64-encode/resource=` : Utilisation de la fonction de filtre PHP pour convertir le contenu du ressource en Base64.
-      - `solution.php` : C'est le fichier ciblé de notre attaque LFI.
+**details :**
+          - `https://lfi.warchall.net/index.php?lang=` : C'est la base de l'URL.
+          - `php://filter/convert.base64-encode/resource=` : C'est la partie vulnérable de l'URL. Tentative d'exploitation                d'une LFI en utilisant le protocole `php://filter`pour appliquer une "conversion Base64" à la ressource                      spécifiée. 
+          - `filter/convert.base64-encode/resource=` : Utilisation de la fonction de filtre PHP pour convertir le contenu du              ressource en Base64.
+          - `solution.php` : C'est le fichier ciblé de notre attaque LFI.
 
   - (5) Obtention du code base64 : `PGh0bWw+Cjxib2R5Pgo8cHJlIHN0eWxlPSJjb2xvcjojMDAwOy.......`
 
@@ -90,7 +89,7 @@
       - obtention de la "solution" en code html avec une petite section de php
 
   **II-Notion approfondie :**
-  - (1) php filter avec LFI
+  - (1) php filter avec LFI/RFI
   - (2) code base64
   - (3) decodage base64
 
