@@ -79,7 +79,8 @@
           - `filter/convert.base64-encode/resource=` : Utilisation de la fonction de filtre PHP pour convertir le contenu du              ressource en Base64.
           - `solution.php` : C'est le fichier ciblé de notre attaque LFI.
 
-  - (5) Obtention du code base64 : `PGh0bWw+Cjxib2R5Pgo8cHJlIHN0eWxlPSJjb2xvcjojMDAwOy.......`
+  - (5) Obtention du code base64 : 
+      - extrait :`PGh0bWw+Cjxib2R5Pgo8cHJlIHN0eWxlPSJjb2xvcjojMDAwOy.......`
 
   - (6) Decodage du code par un decodeur base64 en ligne : 
       **Actions :**
@@ -87,9 +88,9 @@
       - collage du code dans le prompt du decodeur
       - decode
       - obtention de la "solution" en code html avec une petite section de php
+      - NB : la solution se trouvait dans le return.
 
   **II-Notion approfondie :**
   - (1) php filter avec LFI/RFI
   - (2) code base64
   - (3) decodage base64
-
